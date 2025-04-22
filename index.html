@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Input</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Create an Account</h2>
+
+    <div class="form-group">
+      <label for="passwordInput">Password</label>
+        <div class="password-box">
+          <input type="password" id="passwordInput" placeholder="Enter your password">
+          <button class="toggle-btn" id="togglePassword">👁️</button>
+        </div>
+    </div>
+
+    <div id="strengthMessage" class="message">
+      <p>Password must include:</p>
+      <ul>
+        <li id="length" class="invalid"> At least 8 characters</li>
+        <li id="uppercase" class="invalid"> One uppercase letter</li>
+        <li id="lowercase" class="invalid"> One lowercase letter</li>
+        <li id="number" class="invalid"> One number</li>
+        <li id="special" class="invalid"> One special character (!@#$%^&*)</li>
+      </ul>
+    </div>
+  </div>
+      
+
+  <script src="script.js"></script>
+</body>
+</html>
