@@ -101,18 +101,111 @@ input:focus {
 }
 
 .message li::before {
-  content: "✖";
+  content: "\f00d"; /* Font Awesome icon for "times" (✖) */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   position: absolute;
   left: 0;
   color: red;
-  font-weight: bold;
+}
+
+.message li.valid::before {
+  content: "\f00c"; /* Font Awesome icon for "check" (✔) */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: green;
 }
 
 .message li.valid {
   color: green;
 }
 
-.message li.valid::before {
-  content: "✔";
-  color: green;
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #7b61ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+  background-color: #684bd1;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+
+.error-message {
+  display: block;
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.strength-bar > div {
+  height: 100%;
+  border-radius: 5px;
+  width: 0;
+  transition: width 0.3s;
+}
+
+.strength-weak {
+  background-color: red;
+}
+
+.strength-medium {
+  background-color: yellow;
+}
+
+.strength-strong {
+  background-color: green;
+}
+
+/* Confirm password specific styling */
+.confirm-password-wrapper {
+  margin-top: 1.5rem; /* Adds space between the password and confirm password */
+}
+
+#confirmPassword {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.75rem;
+  transition: border 0.3s ease;
+}
+
+#confirmPassword:focus {
+  outline: none;
+  border-color: #7b61ff;
+  box-shadow: 0 0 0 3px rgba(123, 97, 255, 0.2);
 }
